@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Sebet</h1>
+    <button onclick="addtoCard()">Mehsul elave et</button>
+    <p>Sebetdeki mehsullarin sayi: <span id="cartCount">0</span></p>
+    <ul id="cartList"></ul>
+
+    <script>
+        const cartList = document.getElementById("cartList")
+        let cartCount = 0;
+        const maxItems = 15;
+
+        function addtoCard(){
+            if(cartCount <  maxItems){
+                cartCount++;
+                html = "";
+                for(let i = 1; i <= cartCount; i++){
+                    html += "<li>Mehsul"+ i +"</li>"
+                }
+                document.getElementById("cartList").innerHTML = html
+                document.getElementById("cartCount").innerHTML = cartCount
+            }else{
+                alert("Siz limiti kecdiniz sebet doldu")
+            }
+        }
+    </script>
+</body>
+</html>

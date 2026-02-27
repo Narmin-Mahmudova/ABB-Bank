@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            #game { position: relative; margin: 10vh auto; border: 1px solid #333 }
+            #game > * { position: absolute }
+        </style>
+    </head>
+    <body>
+        <script>
+            const game = {
+                id: 'game',
+                w: 800,
+                h: 600,
+                r: 0,
+                color: 'white',
+                create(main) {
+                    main.innerHTML += `<div id="${this.id}"></div>`
+                    this.show()
+                }, 
+                show() {
+                    this.elem = document.getElementById(this.id)
+                    this.elem.style.width = this.w + 'px'
+                    this.elem.style.height = this.h + 'px'
+                    this.elem.style.borderRadius = this.r + '%'
+                    this.elem.style.background = this.color
+                    this.elem.style.left = this.x + 'px'
+                    this.elem.style.top = this.y + 'px'
+                },
+                over() {
+                    clearInterval(timer)
+                    alert('GAME OVER !!!')
+                }
+            }
+            
+            const ball = {
+                id: 'ball',
+                w: 30,
+                h: 30,
+                r: 50,
+                color: 'red',
+                x: 0,
+                y: 0,
+                dx: 5,
+                dy: 5,
+                create(main) {
+                    main.innerHTML += `<div id="${this.id}"></div>`
+                    this.show()
+                }, 
+                show() {
+                    this.elem = document.getElementById(this.id)
+                    this.elem.style.width = this.w + 'px'
+                    this.elem.style.height = this.h + 'px'
+                    this.elem.style.borderRadius = this.r + '%'
+                    this.elem.style.background = this.color
+                    this.elem.style.left = this.x + 'px'
+                    this.elem.style.top = this.y + 'px'
+                },
+                move() {
+                    this.x += this.dx 
+                    this.y += this.dy 
+                    if (this.x < 0 || this.x >= game.w - this.w) this.dx *= -1
+                    if (this.y >= game.h - bar.h - this.h && 
+                        this.x > bar.x - this.w / 2 && this.x < bar.x + bar.w - this.w / 2 ||
+                        this.y < 0 ) this.dy *= -1
+                    if (this.y >= game.h - this.h) game.over()
+                    this.show()
+                }
+            }
+
+            const bar = {
+                id: 'bar',
+                w: 150,
+                h: 10,
+                r: 10,
+                color: 'blue',
+                x: 0,
+                y: 590,
+                dx: 10,
+                dy: null,
+                create(main) {
+                    main.innerHTML += `<div id="${this.id}"></div>`
+                    this.show()
+                }, 
+                show() {
+                    this.elem = document.getElementById(this.id)
+                    this.elem.style.width = this.w + 'px'
+                    this.elem.style.height = this.h + 'px'
+                    this.elem.style.borderRadius = this.r + '%'
+                    this.elem.style.background = this.color
+                    this.elem.style.left = this.x + 'px'
+                    this.elem.style.top = this.y + 'px'
+                },
+                move(e) {
+                    if (e.keyCode == 37 && this.x > 0) this.x -= this.dx
+                    if (e.keyCode == 39 && this.x < game.w - this.w) this.x += this.dx
+                    this.show()
+                }
+            }
+
+            game.create( document.querySelector('body') )
+            ball.create( game.elem )
+            bar.create( game.elem )
+
+            let timer = setInterval(function() { ball.move() }, 40)
+            onkeydown = function(e) { bar.move(e) }
+        </script>
+    </body>
+</html>

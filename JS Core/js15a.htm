@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse }
+        td {width: 70px; height: 70px; text-align: center; border: 1px solid #333 }
+        .black {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <table></table>
+
+    <script>
+        let str = "GAMEOVER"
+        const cdv = document.querySelector('table')
+        let kod =''
+        let x = 0
+
+        for(let i = 0; i < 4; i++){
+            kod += '<tr>'
+            for(let j=0; j < 4;j++){
+                let color = ((i+j) % 2 == 1) ? "black" : "white"
+                let cell = (i != 0 && x < str.length) ? str[x++] : ''
+                kod +=  `<td class="${color}">${cell}</td>`
+            }
+            kod += '</tr>'
+        }
+        cdv.innerHTML += kod
+    </script>
+</body>
+</html>

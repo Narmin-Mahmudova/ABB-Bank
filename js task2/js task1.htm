@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n" type="number">
+    <button onclick="ver()" id="res">?</button>
+    <input id="m" type="number">
+
+
+    <script>
+        const n = document.getElementById('n');
+        const m = document.getElementById('m');
+        const res = document.getElementById('res');
+
+        function ver(){
+            res.innerHTML = (n.value > m.value) ? ">" :
+                            (n.value < m.value) ? "<" : "=" ;
+        }
+    </script>
+</body>
+</html>

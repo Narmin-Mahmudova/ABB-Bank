@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Car Details</h1>
+        <button onclick="goster()" style="color: white;background-color: green; border: 0 solid; padding: 10px;">Melumatlari Goster</button>
+        <div id="info" style="padding: 10px;"></div>
+    </div>
+
+    <script>
+        let car = {
+            model: "BMW X5",
+            price: "80000 AZN"
+        };
+
+    function goster() {
+        let info = document.getElementById("info");
+        info.style.display = "block"; 
+        info.innerText = `Model: ${car.model}, Qiymət: ${car.price}`;
+    }
+    </script>
+</body>
+</html>

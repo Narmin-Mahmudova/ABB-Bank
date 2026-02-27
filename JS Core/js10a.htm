@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #cdv{ border-collapse: collapse; }
+        td{ width: 50px;height: 50px; text-align: center; border: 1px solid #333; }
+    </style>
+</head>
+<body>
+    <table id="cdv"></table>
+
+    <script>
+        const cdv = document.getElementById("cdv");
+        let kod = '';
+        for(let i = 1; i <= 7; i++){
+            kod += `<tr>`;
+            for(let j = 1; j <= 7; j++){
+                let cell = (i + j <= 8 && i <= j) || (i + j >= 8 && i >= j) ? (j < 4) ? x++ : x-- : '';
+                kod += `<td>${cell}</td>`;
+            }
+            kod += `</tr>`;
+        }
+        cdv.innerHTML = kod;
+    </script>
+</body>
+</html>

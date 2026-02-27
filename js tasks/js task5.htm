@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nbr" type="text">
+    <button onclick="ver()">Ok</button>
+    <p id="ntc"></p>
+
+    <script>
+        function ver() {
+            const nbr = +document.getElementById("nbr").value;
+            const nct = document.getElementById("ntc");
+
+            if(nbr > 50 && nbr <= 100){
+                ntc.innerHTML = "Pass"
+            }else{
+                ntc.innerHTML = "Fail"
+            }
+        }
+    </script>
+</body>
+</html>

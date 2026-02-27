@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table{border-collapse: collapse;}
+        td{width: 50px; height: 50px; border: 0 solid #333; text-align: center;}
+        .black { background-color: yellow; }
+        .white { background-color: orange; }
+    </style>
+</head>
+<body>
+    <select id="sutun"></select>
+    <select id="setir"></select>
+    <button onclick="chess()">OK</button>
+    <table id="cdv"></table>
+
+    <script>
+        const table = document.getElementById('cdv')
+        const setir = document.getElementById('setir')
+        const sutun = document.getElementById('sutun')
+        let letter = " ABCDEFGH"
+        let carisira = 1
+        let carisetir = 2
+        chess(1,2)
+
+        for(let i = 1; i <= 8; i++){
+            setir.innerHTML += `<option>${i}</option>`
+            sutun.innerHTML += `<option value="${i}">${letter[i]}</option>`
+        }
+
+        function chess(row = setir.value, col = sutun.value){  
+            carisira = row
+            carisetir = col
+
+            setir.value = row
+            sutun.value = col
+            let kod = ''
+            for(let i = 0; i <= 8; i++){
+                kod += '<tr>'
+                for(let j = 0; j <= 8; j++){
+                    let color = j == 0 || i == 0 ? '' :
+                                (i + j) % 2 ? "white" : "black"
+                    let cell = i == 0 ? letter[j] : 
+                               j == 0 ? i : 
+                               i == row && j == col ? '♞' : 
+                               Math.abs(i - row) == 1 && Math.abs(j - col) == 2 ||
+                               Math.abs(i - row) == 2 && Math.abs(j - col) == 1 ? '*' : ''
+                    let event = cell == '*' ? `onclick= "chess(${i}, ${j})"` : ''
+                    kod += `<td ${event} class="${color}">${cell}</td>`
+                }
+                kod += '</tr>'
+            }
+            table.innerHTML = kod
+        }
+        </script>
+</body>
+</html>

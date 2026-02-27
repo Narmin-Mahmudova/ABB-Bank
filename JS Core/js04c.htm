@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n" type="number">
+    <button onclick="ver()">Ok</button>
+    <h1 id="res"></h1>
+
+
+    <script>
+        const n = document.getElementById('n');
+        const res = document.getElementById('res');
+
+        function ver(){
+            res.innerHTML = n.value % 2 ? "Tek eded" : "Cut eded";
+
+            // if(n.value % 2 != 0) 
+            //     res.innerHTML = "Tek eded";
+            // else 
+            //     res.innerHTML = "Cut eded";
+        }
+    </script>
+</body>
+</html>

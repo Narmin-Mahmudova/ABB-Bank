@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="reng">
+    <button onclick="yoxla()">yoxla</button>
+    <p id="ntc"></p>
+
+    <script>
+        let ntc = document.getElementById('ntc')
+        let reng = document.getElementById('reng')
+        let color = 'qirmizi'
+
+
+        function yoxla() {
+            if (reng.value === color){
+                ntc.innerHTML = "Dayan"
+            }
+            else{
+                ntc.innerHTML = "Davam et"
+            }
+        }
+    </script>
+
+</body>
+</html>

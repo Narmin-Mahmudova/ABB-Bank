@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <input onclick="show()" type="radio" name="select" checked="checked">All
+        <input onclick="show(0)" type="radio" name="select">Male
+        <input onclick="show(1)" type="radio" name="select">Female
+    </div>
+    <select id="list"></select>
+
+    <script>
+        const list = document.getElementById('list')
+        let qrup = ['Sabir', 'Gunay', 'Elmar', 'Nermin', 'Nurlan', 'Xedice', 'Hesen']
+        show()
+
+        function show(rem){
+            console.log = (rem)
+
+            let kod = ''
+            for(let i = 0; i < qrup.length; i++){
+                if(rem == undefined || i % 2 == rem) kod += `<option>${qrup[i]}</option>`
+            }
+            list.innerHTML = kod
+        }
+    </script>
+</body>
+</html>

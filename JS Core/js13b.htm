@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            const arr = ['Nurlan', 'Gunay', 'Ilkin', 'Samire', 'Elmar']
+            arr.sort()
+
+            const nums = [23, 54, 122, 1, -5, 0, 87, 2.5, 8, 31]
+            // nums.sort()
+            nums.sort( function(a, b) {return b - a} )
+            nums.reverse()
+            nums.sort( function(a, b) {return Math.random() - .5 } )
+
+        </script>
+    </body>
+</html>

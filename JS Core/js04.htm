@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #sekil{width: 400px ;height: 300px ;display: table; border: 1px solid #333;margin: 10px 0;object-fit: cover;}
+    </style>
+</head>
+<body>
+    <button onclick="change('alma')">Alma</button>
+    <button onclick="change('heyva')">Heyva</button>
+    <button onclick="change('nar')">Nar</button>
+    <img id="sekil" src="img/alma.jpg" alt="meyve"></img>
+
+    <script>
+        const sekil = document.getElementById('sekil');
+
+        function change(meyve){
+            sekil.src = `img/${meyve}.jpg`;
+        }
+    </script>
+
+</body>
+</html>

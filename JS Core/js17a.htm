@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        #game{position: relative; width: 800px;height: 600px;margin: 10vh auto;border: 1px solid #333;}
+        #game > *{position: absolute;}
+        #ball{width: 30px;height: 30px;border-radius: 50%;background-color: red;}
+        #bar{width: 150px;height: 10px;border-radius: 10%;background-color: blue; bottom: 0;}
+    </style>
+</head>
+<body>
+    <div id="game">
+        <div id="ball"></div>
+        <div id="bar"></div>
+    </div>
+
+    <script>
+        const game = document.getElementById('game')
+        const ball = document.getElementById('ball')
+        const bar = document.getElementById('bar')
+        let x = 0
+        let y = 0
+        let dx = 5
+        let dy = 5
+        let barX = 0
+        let timer = setInterval(ballMove, 40)
+        onkeydown = barMove
+
+        function barMove(e){
+            if (e.keyCode == 37 && barX > 0) barX -= 10
+            if (e.keyCode == 39 && barX < 650) barX += 10
+            bar.style.left = barX + 'px'
+        }
+
+        function ballMove(){
+            x += dx
+            y += dy
+            if(x < 0 || x >= 770) dx *= -1
+            if (y >= 560 && x > barX - 15 && x < barX + 135 ||
+                y < 0 ) dy *= -1
+            if(y >= 570) gameOver()
+            ball.style.left = x + "px"
+            ball.style.top = y + "px"
+        }
+
+        function gameOver() {
+            clearInterval(timer)
+            alert('GAME OVER !!!')
+        }
+    </script>
+</body>
+</html>

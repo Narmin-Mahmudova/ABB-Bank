@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>input{width: 20px;}</style>
+</head>
+<body>
+    <input id="n" type="text">x**2+
+    <input id="m" type="text">x+
+    <input id="k" type="text">=0
+    <button onclick="ver()" id="res">?</button>
+    <h1 id="msg"></h1>
+
+    <script>
+        let n = document.getElementById('n');
+        let m = document.getElementById('m');
+        let k = document.getElementById('k');
+        let msg = document.getElementById('msg');
+
+        function ver(){
+            let a = Number(n.value);
+            let b = Number(m.value);
+            let c = Number(k.value);
+            let d = b**2 - 4*a*c;
+
+            if(d < 0){
+                msg.innerHTML = "Helli yoxdur";
+            } else if(d === 0){
+                let x = -b / (2*a);
+                msg.innerHTML = `x = ${x}`;
+            } else {
+                let x1 = (-b + Math.sqrt(d)) / (2*a);
+                let x2 = (-b - Math.sqrt(d)) / (2*a);
+                msg.innerHTML = `x1 = ${x1}, x2 = ${x2}`;
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input id="ad" type="text" placeholder="Adin nedir?" />
+        <button onclick="salamVer()">Ok</button>
+        <h1></h1>
+        
+        <script>
+            function salamVer() { 
+                let ad = document.getElementById('ad')
+                let h1 = document.querySelector('h1')
+                h1.innerHTML = `Yeni ilin mübarək, 
+                                    <i style=""> ${ad.value} </i>!!!`
+                ad.value = ''
+            }
+
+            /*
+            let ad = prompt('Adin nedir?')
+            alert('Yeni ilin mubarek, ' + ad)
+            window.confirm('Yeni ile hazirsan?')
+
+            console.log('Console-dən ən dərin təbriklər !')
+            document.write('Yeni il düşərli olsun!')
+            window.alert('Yeni iliniz mübarek!')
+            */
+        </script>
+    </body>
+</html>

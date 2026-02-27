@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <div>
+            <div class="flex justify-center gap-6 mt-10">
+                <div class="bg-slate-800 text-white flex items-center justify-between px-8 py-6 rounded-l w-[500px]">
+                    <div class="w-34 h-34 rounded-full border-3 border-yellow-400 overflow-hidden">
+                        <img src="img/burger.jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="ml-6 flex-1">
+                        <h2 class="text-xl font-semibold">Tasty Thursdays</h2>
+                        <p class="text-3xl my-2">20% <span class="text-lg">off</span></p>
+                        <div style="display: flex;">
+                            <button class="bg-yellow-400 text-white px-5 py-2 rounded-full font-semibold">
+                                Order Now      
+                                <i style="color:white;" class="fa-solid fa-cart-shopping"></i>    
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="bg-slate-800 text-white flex items-center justify-between px-8 py-6 rounded-l w-[500px]">
+                    <div class="w-34 h-34 rounded-full border-3 border-yellow-400 overflow-hidden">
+                        <img src="img/Pizza_(1).jpg" class="w-full h-full object-cover" />
+                    </div>
+                    <div class="ml-6 flex-1">
+                        <h2 class="text-xl font-semibold">Pizza Days</h2>
+                        <p class="text-3xl my-2">15% <span class="text-lg">off</span></p>
+                        <div style="display: flex;">
+                            <button class="bg-yellow-400 text-white px-5 py-2 rounded-full font-semibold">
+                                Order Now      
+                                <i style="color:white;" class="fa-solid fa-cart-shopping"></i>    
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div style="margin: auto;">
+            <h1 style="display: flex;justify-content: center; padding: 20px; margin-top: 30px;margin-bottom: 10px;font-size: xx-large; font-weight: bold;"> Our Menu</h1>
+            <div>
+                <ul
+                    style="display: flex;justify-content: center;align-items: center;gap: 10px;margin-bottom: 10px;font-size: large; list-style: none;cursor: pointer;">
+                    <li style="background-color: slategrey;border-radius: 50%;padding: 15px;">All</li>
+                    <li>Burger</li>
+                    <li>Pizza</li>
+                    <li>Pasta</li>
+                    <li>Fries</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="p-4">
+        <div class="max-w-6xl max-lg:max-w-3xl max-sm:max-w-sm mx-auto">
+            <div id="mealList" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-12">
+
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

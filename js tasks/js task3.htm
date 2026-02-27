@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nbr1" type="text">
+    <input id="nbr2" type="text">
+    <button onclick="ver()">Ok</button>
+    <p id="ntc"></p>
+
+    <script>
+        function ver(){
+            const nbr1 = +document.getElementById("nbr1").value
+            const nbr2 = +document.getElementById("nbr2").value
+            const ntc = document.getElementById("ntc")
+
+            let sum = 0;
+            for(let i = nbr1; i <= nbr2; i++){
+                sum += i
+            }
+            ntc.innerHTML = sum
+        }
+    </script>
+</body>
+</html>

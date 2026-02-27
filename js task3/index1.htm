@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Student Class</h1>
+    <div id="screen"></div>
+    <script>
+        class Telebe {
+            constructor(ad, yas, kurs) {
+                this.name = ad;
+                this.age = yas;
+                this.kurs = kurs;
+            }
+        }
+
+        let screen = document.getElementById('screen');
+
+        let telebeler = [
+            new Telebe('Rafael', 20, 'Matematika'),
+            new Telebe('Sema', 22, 'Iqtisadiyyat'),
+            new Telebe('Kamal', 21, 'Muhendislik')
+        ];
+        for (let i = 0; i < telebeler.length; i++) {
+            screen.innerHTML += `Ad: ${telebeler[i].name}, Yas: ${telebeler[i].age}, Kurs: ${telebeler[i].kurs}<br>`;
+        }
+    </script>
+</body>
+
+</html>

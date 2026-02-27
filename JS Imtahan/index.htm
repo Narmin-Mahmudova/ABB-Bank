@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div style="margin: auto;">
+        <div>
+            <h1 style="display: flex;justify-content: center;font-size: 48px;">İndi hesablayın</h1>
+            <div>
+                <div style="display: flex;justify-content: center; gap: 10px;">
+                    <button id="btn1" class="active-btn">Kredit</button>
+                    <button id="btn2">Depozit</button>
+                    <button id="btn3">Avtomobil krediti</button>
+                    <button id="btn4">İpoteka</button>
+                </div>
+            </div>
+
+
+            <div style="padding-top: 30px;">
+                <div id="div1" style="display: flex; justify-content: space-around;">
+                    <div style="width: 43%;">
+                        <div>
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;font-size: 18px;">Məbləğ</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="qiymet">10000</span> ₼
+                                    </p>
+                                </div>
+                                <div>
+                                    <input id="amount" style="width: 100%;" type="range" min="300" max="50000"
+                                        value="10000">
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">300₼</p>
+                                    <p style="color: #7a7d82;">50000₼</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;font-size: 18px;">Müddət</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="ay">12</span> ay
+                                    </p>
+                                </div>
+                                <div>
+                                    <input id="month" style="width: 100%;" type="range" min="3" max="59" value="12">
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">3ay</p>
+                                    <p style="color: #7a7d82;">59ay</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82; font-size: 18px;">Faiz dərəcəsi</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="faiz">12</span> %
+                                    </p>
+                                </div>
+                                <div>
+                                    <input id="percent" style="width: 100%;" type="range" min="10.9" max="40"
+                                        step="0.1" value="12">
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">10.9%</p>
+                                    <p style="color: #7a7d82;">37.7%</p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div style="width: 33%;">
+                        <div>
+                            <div style="background-color: rgb(25, 101, 241);padding: 32px; border-radius: 30px;">
+                                <h1 style="display: flex; justify-content: center; color: white;">Aylıq kredit ödənişi</h1>
+                                <div id="netice" style="display: flex; justify-content: center; color:white; font-size:28px;">0 ₼</div>
+                                <a style="cursor: pointer; display: flex; justify-content: center;border-radius: 10px;padding: 15px; margin: 32px 0 0 0 ; color: black;background-color: white;">Davam et</a>
+                            </div>
+                            <p style="display: flex; justify-content: center; margin: 16px 0 0;color: #484a4f;">İlkin hesablama</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div id="div2" style="display: none; justify-content: space-around;">
+                    <div style="width: 43%;">
+                        <div>
+
+                            <div>
+                                <div style="display: flex; justify-content: space-between;">
+                                    <div
+                                        style="display: flex; background-color: #0A0B0D0A; padding: 6px;border-radius: 10px; cursor: pointer;">
+                                        <div>
+                                            <span id="span1" class="active">Hər ay</span>
+                                        </div>
+                                        <div>
+                                            <span id="span2">Hər il</span>
+                                        </div>
+                                    </div>
+
+                                    <div
+                                        style="display: flex; background-color: #0A0B0D0A; padding: 6px;border-radius: 10px; cursor: pointer;">
+                                        <div>
+                                            <span id="span3" class="active">AZN</span>
+                                        </div>
+                                        <div>
+                                            <span id="span4">USD</span>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;font-size: 18px;">Məbləğ</p>
+                                    <p style="font-weight: bolder; font-size: 20px;"><span id="qiymet2">10000</span> ₼</p>
+                                </div>
+                                <div>
+                                    <input id="amount2"  oninput="calculate2()" style="width: 100%;" type="range" value="10000" min="300"
+                                        max="50000">
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">300₼</p>
+                                    <p style="color: #7a7d82;">3000000₼</p>
+                                </div>
+
+                                <div>
+                                    <p style="color: #7a7d82;font-size: 18px;">Müddət</p>
+                                    <div style="display: flex; gap: 10px;">
+                                        <span id="circle1" class="active-circle">3</span>
+                                        <span id="circle2">6</span>
+                                        <span id="circle3">12</span>
+                                        <span id="circle4">18</span>
+                                        <span id="circle5">24</span>
+                                        <span id="circle6">36</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div style="width: 33%;">
+                        <div>
+                            <div style="background-color: rgb(25, 101, 241);padding: 32px; border-radius: 30px;">
+                                <h1 style="display: flex; justify-content: center; color: white;">Ümumi qazanc</h1>
+                                <div id="result2" style="display: flex; justify-content: center; color:white; font-size:28px; ">
+                                    0 ₼
+                                </div>
+                                <hr />
+                                <div style="display: flex;justify-content: space-between;">
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Hər ay ödənilən faiz</p>
+                                         <div style="color: white; font-size: 22px;" id="gelir">0 ₼</div>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Faiz dərəcəsi</p>
+                                        <div style="color: white; font-size: 22px;" id="percent2">8 %</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <p style="display: flex; justify-content: center; margin: 16px 0 0;color: #484a4f;">İlkin hesablama</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="div3" style="display: none; justify-content: space-around;">
+                    <div style="width: 43%;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between;">
+                                <div
+                                    style="display: flex; background-color: #0A0B0D0A; padding: 6px;border-radius: 10px; cursor: pointer;">
+                                    <div>
+                                        <span id="spn1" class="active">Elektrik</span>
+                                    </div>
+                                    <div>
+                                        <span id="spn2">Hibrid</span>
+                                    </div>
+                                    <div>
+                                        <span id="spn3">Digər</span>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;font-size: 18px;">Avtomobilin qiyməti</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="qiymet3">50000</span> ₼</p>
+                                </div>
+                                <div>
+                                    <input id="carPrice" style="width: 100%;" type="range" value="50000" min="300" max="500000">                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">300₼</p>
+                                    <p style="color: #7a7d82;">500000₼</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;font-size: 18px;">İlkin ödəniş faizi</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="faiz3">20</span> %
+                                    </p>
+                                </div>
+                                <div>
+                                    <input id="initialPercent" style="width: 100%;" type="range" value="20" min="10" max="90">                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">10%</p>
+                                    <p style="color: #7a7d82;">90%</p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82; font-size: 18px;">Kredit müddəti</p>
+                                    <p style="font-weight: bolder; font-size: 20px;">
+                                        <span id="ay3">24</span> ay
+                                    </p>
+                                </div>
+                                <div>
+                                    <input id="inputMonth" style="width: 100%;" type="range" value="24" min="3" max="60">
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <p style="color: #7a7d82;">3ay</p>
+                                    <p style="color: #7a7d82;">60ay</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+
+
+                    <div style="width: 33%;">
+                        <div>
+                            <div style="background-color: rgb(25, 101, 241);padding: 32px; border-radius: 30px;">
+                                <h1 style="display: flex; justify-content: center; color: white;">Aylıq kredit ödənişi
+                                </h1>
+                                <div id="result3" style="display: flex; justify-content: center; color:white; font-size:28px; ">
+                                    0 ₼
+                                </div>
+                                <hr />
+                                <div style="display: flex;justify-content: space-between;">
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Kredit məbləği</p>
+                                         <div style="color: white; font-size: 22px;" id="kredit">0 ₼</div>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">İlkin faiz dərəcəsi</p>
+                                        <div style="color: white; font-size: 22px;" id="percent3">14 %</div>
+                                    </div>
+                                </div>
+                                <div style="display: flex;justify-content: space-between;">
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Komissiya(0.5%, min 20AZN)</p>
+                                         <div style="color: white; font-size: 22px;" id="komissiya">0 ₼</div>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Ümumi ödəniş</p>
+                                        <div style="color: white; font-size: 22px;" id="odenis"></div>
+                                    </div>
+                                </div>
+
+                                <a
+                                    style="cursor: pointer; display: flex; justify-content: center;border-radius: 10px;padding: 15px; margin: 32px 0 0 0 ; color: black;background-color: white;">Davam
+                                    et</a>
+                            </div>
+                            <p style="display: flex; justify-content: center; margin: 16px 0 0;color: #484a4f;">İlkin
+                                hesablama</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div id="div4" style="display: none; justify-content: space-around;">
+                    <div style="width: 43%;">
+                        <div>
+                            <div>
+                                <div>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <p style="color: #7a7d82;font-size: 18px;">Kredit məbləği</p>
+                                        <p style="font-weight: bolder; font-size: 20px;">
+                                            <span id="qiymet4">100000</span> ₼
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input id="inputqiymet" style="width: 100%;"  type="range" value="100000" min="1" max="500000">
+                                    </div>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <p style="color: #7a7d82;">1₼</p>
+                                        <p style="color: #7a7d82;">500000₼</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <p style="color: #7a7d82;font-size: 18px;">Müddət</p>
+                                        <p style="font-weight: bolder; font-size: 20px;">
+                                            <span id="year4">12</span> il
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <input id="il" style="width: 100%;" type="range" value="12" min="1" max="25">
+                                    </div>
+                                    <div style="display: flex;justify-content: space-between;">
+                                        <p style="color: #7a7d82;">1il</p>
+                                        <p style="color: #7a7d82;">25il</p>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <p style="color: #7a7d82;font-size: 18px;">İllik faiz dərəcəsi</p>
+                                    <div style="display: flex; gap: 10px;">
+                                        <span id="crcl1">4%</span>
+                                        <span id="crcl2">7%</span>
+                                        <span id="crcl3">8%</span>
+                                        <span id="crcl4">11%</span>
+                                        <span id="crcl5">12%</span>
+                                        <span id="crcl6">13%</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div style="width: 33%;">
+                        <div>
+                            <div style="background-color: rgb(25, 101, 241);padding: 32px; border-radius: 30px;">
+                                <h1 style="display: flex; justify-content: center; color: white;">Aylıq kredit ödənişi
+                                </h1>
+                                <div id="result4" style="display: flex; justify-content: center; color:white; font-size:28px; ">
+                                    0 ₼
+                                </div>
+                                <hr />
+                                <div style="display: flex;justify-content: space-between;">
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">Kredit məbləği</p>
+                                         <div style="color: white; font-size: 22px;" id="kreditmeblegi">0 ₼</div>
+                                    </div>
+                                    <div>
+                                        <p style="color: #FFFFFFB8; font-size: 18px;">İllik faiz dərəcəsi</p>
+                                        <div style="color: white; font-size: 22px;" id="percent4">4 %</div>
+                                    </div>
+                                </div>
+
+                                <a
+                                    style="cursor: pointer; display: flex; justify-content: center;border-radius: 10px;padding: 15px; margin: 32px 0 0 0 ; color: black;background-color: white;">Davam
+                                    et</a>
+                            </div>
+                            <p style="display: flex; justify-content: center; margin: 16px 0 0;color: #484a4f;">İlkin hesablama</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+}
+
+.poppins{
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+header{
+    background-color: lightblue;
+}
+.allheader{
+    max-width: 1300px;
+    padding: 10px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.menulist ul{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.menulist ul li {
+    cursor: pointer;
+}
+.logo h1{
+    color: blue ;
+
+}
+.logo span{
+    color: black;
+}
+.home{
+    color: blue;
+}
+.right button{
+    background-color: rgba(0, 0, 255, 0.612);
+    padding: 8px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+}
+.side{
+    padding: 10px;
+    position: fixed;
+    width: 300px;
+    top: 0;
+    right: -300px;
+    height: 100vh;
+    background-color: rgba(0, 0, 255, 0.612);
+    transition: 0.6s;
+}
+.side ul{
+    color: white;
+    padding: 10px;
+    font-size: large;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+#sidebar.active{
+    right: 0;
+}
+.btn{
+    display: none;
+}
+.dropdown{
+    position: relative;
+    display: inline-block;
+}
+.drp-cnt{
+    position: absolute;
+    background-color: blue;
+    max-width: 100px;
+    color: white;
+    z-index: 1;
+    display: none;
+    padding: 10px;
+    border-radius: 3px;
+}
+.dropdown.active.drp-cnt{
+    display: block;
+}
+body.dark{
+    background-color: #333;
+    color: white;
+}
+body.dark.header{
+    background-color: blueviolet;
+    color: white;
+}
+body.dark.h1{
+    color: white;
+}
+body.dark.h2{
+    color: white;
+}
+body.dark h2{
+    color: white;
+}
+body.dark.a{
+    color: pink;
+}
+body.dark.p{
+    color: pink;
+}
+body.dark.h1{
+    color: orange;
+}
+body.dark.dark{
+    color: white;
+}
+body.dark.button{
+    background-color: black;
+    color: white;
+}
+
+
+@media (max-width: 768px){
+    .menulist ul{
+        display: none;
+    }
+    .sign{
+        display: none;
+    }
+    .btn{
+        display: flex;
+    }
+}

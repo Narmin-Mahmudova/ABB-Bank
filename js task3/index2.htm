@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Isci eleve etmek</h1>
+    <input type="text" id="ad" placeholder="Ad">
+    <input type="text" id="vezife" placeholder="Vəzifə">
+    <input type="number" id="maas" placeholder="Maaş">
+    <input type="date" id="tarix">
+    <button onclick="elaveet()">Isci elave et</button>
+    <button onclick="sil()">Sil</button>
+    <h2>Isci Siyahisi</h2>
+    <table id="table" style="border: 1px solid #333;">
+        <tr>
+            <th>Ad   </th>
+            <th>Vəzifə   </th>
+            <th>Maaş   </th>
+            <th>Başlama Tarixi</th>
+        </tr>
+    </table>
+
+    <script>
+        function elaveet() {
+            let ad = document.getElementById('ad').value;
+            let vezife = document.getElementById('vezife').value;
+            let maas = document.getElementById('maas').value;
+            let tarix = document.getElementById('tarix').value;
+            let table = document.getElementById('table');
+            
+            table.innerHTML += `
+                <tr>
+                    <td>${ad}</td>
+                    <td>${vezife}</td>
+                    <td>${maas}</td>
+                    <td>${tarix}</td>
+                </tr>
+            `
+
+            document.getElementById('ad').value = '';
+            document.getElementById('vezife').value = '';
+            document.getElementById('maas').value = '';
+            document.getElementById('tarix').value = '';
+            
+        }
+
+        function sil() {
+            let table = document.getElementById('table');
+            if (table.rows.length > 1) { 
+                table.deleteRow(table.rows.length - 1);
+            }
+        }
+    </script>
+</body>
+</html>

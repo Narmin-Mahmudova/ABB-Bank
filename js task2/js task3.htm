@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="n"  type="text" placeholder="Yasinizi daxil edin:" />
+    <input id="m" name="sex" checked="checked" type="radio"/>Kisi
+    <input id="f" name="sex" type="radio"/>Qadin
+    <button onclick="ver()">Ok</button>
+    <h1 id="msg"></h1>
+
+    <script>
+        const n = document.getElementById('n');
+        const m = document.getElementById('m');
+        const f = document.getElementById('f');
+        const msg = document.getElementById('msg');
+
+        function ver(){
+            let age = Number(n.value);
+
+            if (age < 18) {
+                msg.innerHTML = "Salam usaqlar";
+            } else if (m.checked) {
+                msg.innerHTML = "Salam cenab";
+            } else if (f.checked) {
+                msg.innerHTML = "Salam xanim";
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="text" id="text">
+    <button onclick="yoxla()">yoxla</button>
+    <p id="ntc"></p>
+
+    <script>
+        let text = document.getElementById('text')
+        let ntc = document.getElementById('ntc')
+
+        function yoxla() {
+            if (text.value >= 18){
+                ntc.innerHTML = "Buyurun kecin"
+            }
+            else {
+                ntc.innerHTML = "Qadagandir"
+            }
+        }
+    </script>
+
+</body>
+</html>

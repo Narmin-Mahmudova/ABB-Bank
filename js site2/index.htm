@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header id="container"  class="poppins">
+        <div id="top-header"> 
+            <div>
+                <a style="color: white;" href=""><i class="fa-solid fa-location-dot" style="color:#ffb524"></i> 123 Street New York </a>
+                <a style="color: white;" href=""><i class="fa-solid fa-envelope" style="color:#ffb524"></i> Email@Example.com</a>
+            </div>
+            <div>
+                <a style="color: white;" href="">Privacy Policy / </a>
+                <a  style="color: white;" href="">Terms of Use / </a>
+                <a style="color: white;" href="">Sales and Refunds</a>
+            </div>
+        </div> 
+
+        <div id="main-header">
+            <div id="logo"><h1 >Fruitables</h1></div>
+            <div id="menu">
+                <ul>
+                    <li><a href="" style="color:#81c408">Home</a></li>
+                    <li><a href="">Shop</a></li>
+                    <li><a href="">Shop Detail</a></li>
+                  
+                    <li id="dropdown">
+                      <a href="">Pages ▼</a>
+                      <ul id="drp-cnt">
+                        <li><a href="">Cart</a></li>
+                        <li><a href="">Checkout</a></li>
+                        <li><a href="">Testimonial</a></li>
+                        <li><a href="">404 Page</a></li>
+                      </ul>
+                    </li>
+                  
+                    <li><a href="">Contact</a></li>
+                </ul>
+            </div>
+            <div id="others">
+                <ul>
+                    <li class="others"><a href=""><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                    <li class="others"><a href=""><i class="fa-solid fa-bag-shopping"><span>2</span></i></a></li>
+                    <li class="others"><a href=""><i class="fa-solid fa-user"></i></a></li>
+                    <li onclick="dropToggle()"><i class="fa-solid fa-bars"></i></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="poppins" style="overflow: hidden;background-image: url('img/img1.jpg'); padding: 48px 12px;align-items: center;">
+            <div style="padding: 40px 60px; align-items: center; display: flex; justify-content: space-between;">
+                <div>
+                    <h4 style="margin: 0 0 16px; color: orange; font-size: 24px;">100% Organic Foods</h4>
+                    <h1 style="margin: 0 0 48px ; color: #81c408; font-size: 64px;">Organic Veggies & Fruits Foods</h1>
+                    <div id="searchs">
+                        <input id="search" type="text" placeholder="Search" onkeyup="axtar()">
+                        <button>Submit Now</button>
+                    </div>
+                </div>
+                <div style="background-color: orange; border-radius: 8px; margin: 48px 0 0;">
+                    <img style="width: 437px; height: 291px;" src="img/img2.png" alt="">
+                </div>
+            </div>
+        </div>
+
+        <div style="align-items: center;padding: 48px 12px;overflow: hidden;">
+            <div style="display: flex; align-items: center; padding: 48px 12px; justify-content: center;">
+                <div style="padding: 0 12px; margin: 24px 0 0; width: 261px; height: 271px;">
+                    <div style="background-color: #F4F6F8;padding: 24px; text-align: center;">
+                        <div>
+                            <i style="color: white;background-color: orange;border-radius: 50%; padding: 40px;"
+                                class="fa-solid fa-car-side"></i>
+                        </div>
+                        <h3 style="color: #45595B; padding: 0 0 8px;">Free Shipping</h3>
+                        <h4 style="color: #747D88;">Free on order oven $300</h4>
+                    </div>
+                </div>
+
+                <div style="padding: 0 12px; margin: 24px 0 0; width: 261px; height: 271px;">
+                    <div style="background-color: #F4F6F8;padding: 24px; text-align: center;">
+                        <div>
+                            <i style="color: white;background-color: orange;border-radius: 50%; padding: 40px;"
+                                class="fas fa-user-shield"></i>
+                        </div>
+                        <h3 style="color: #45595B; padding: 0 0 8px;">Security Payment</h3>
+                        <h4 style="color: #747D88;">100% security payment</h4>
+                    </div>
+                </div>
+
+                <div style="padding: 0 12px; margin: 24px 0 0; width: 261px; height: 271px;">
+                    <div style="background-color: #F4F6F8;padding: 24px; text-align: center;">
+                        <div>
+                            <i style="color: white;background-color: orange;border-radius: 50%; padding: 40px;"
+                                class="fas fa-exchange-alt"></i>
+                        </div>
+                        <h3 style="color: #45595B; padding: 0 0 8px;">30 Day Return</h3>
+                        <h4 style="color: #747D88;">30 day money guarantee</h4>
+                    </div>
+                </div>
+
+                <div style="padding: 0 12px; margin: 24px 0 0; width: 261px; height: 271px;">
+                    <div style="background-color: #F4F6F8;padding: 24px; text-align: center;">
+                        <div>
+                            <i style="color: white;background-color: orange;border-radius: 50%; padding: 40px;"
+                                class="fa-solid fa-phone"></i>
+                        </div>
+                        <h3 style="color: #45595B; padding: 0 0 8px;">24/7 Support</h3>
+                        <h4 style="color: #747D88;">Support every time fast</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div style="padding: 48px 12px;overflow: hidden;">
+            <div style="display: flex; justify-content: space-between; align-items: center; padding: 48px 12px;">
+                <div>
+                    <h2 style="margin: 0 0 8px; color: #45595B; font-size: 2.5rem;">Our Organic Products</h2>
+                </div>
+                <div>
+                    <ul style="display: flex; list-style: none; cursor: pointer;">
+                        <li
+                            style="padding: 15px 20px; margin: 10px; border-radius: 30px;background-color: orange; color: white;">
+                            All Products</li>
+                        <li
+                            style="padding: 15px 20px; margin: 10px; border-radius: 30px;background-color: #F4F6F8; color: #45595B;">
+                            Vegetables</li>
+                        <li
+                            style="padding: 15px 20px; margin: 10px; border-radius: 30px;background-color: #F4F6F8; color: #45595B;">
+                            Fruits</li>
+                        <li
+                            style="padding: 15px 20px; margin: 10px; border-radius: 30px;background-color: #F4F6F8; color: #45595B;">
+                            Bread</li>
+                        <li
+                            style="padding: 15px 20px; margin: 10px; border-radius: 30px;background-color: #F4F6F8; color: #45595B;">
+                            Meat</li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div id="Cards2" style="display: flex; flex-wrap: wrap;align-items: center;justify-content: center;">
+                    
+
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+    <script src="cards.js"></script>
+</body>
+</html>

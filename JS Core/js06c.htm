@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="mid" type="text" placeholder="Midterm" min="0" max="100">
+    <input id="fin" type="text" placeholder="Final" min="0" max="100">
+    <button onclick="hesabla()">Ok</button>
+    <h1 id="res"></h1>
+
+    <script>
+        const mid = document.getElementById('mid');
+        const fin = document.getElementById('fin');
+        const res = document.getElementById('res');
+
+        function hesabla(){
+            let avg =(mid.value * .5) + (fin.value * .5);
+            if(fin.value < 17 && avg <= 50) res.innerHTML = 'Kesildin';
+            else res.innerHTML = 'Kecdiniz';
+        }
+    </script>
+</body>
+</html>

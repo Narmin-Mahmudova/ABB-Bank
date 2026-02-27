@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="n" min="1" max="20">
+    <button onclick="goster()">Ok</button>
+    <h1 id="res"></h1>
+
+    <script>
+        const n = document.getElementById('n')
+        const res = document.getElementById('res')
+
+        function goster(){
+            let kod = '1'
+            for (let i = 2; i <= n.value; i++){
+                kod += ', ' + i;
+                // if(i < n.value) kod += ', ';
+            }
+            res.innerHTML = kod
+        }
+    </script>
+</body>
+</html>

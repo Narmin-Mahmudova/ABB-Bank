@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Telebe{
+            constructor(ad, il){
+                this.name = ad
+                this.year = il
+            }
+            age(){
+                return new Date().getFullYear() - this.year
+            }
+        }
+
+        let tlb1 = new Telebe('Xedice', 2007)
+        let tlb2 = new Telebe('Gunay', 2005)
+    </script>
+</body>
+</html>

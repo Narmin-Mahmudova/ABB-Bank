@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse ;margin: 10vh auto;}
+        td {width: 100px; height: 100px; font: bold 2em Arial; 
+             text-align: center; border: 1px solid #333;
+            background: url('png/0.png') center/cover;}
+    </style>
+</head>
+<body>
+    <table></table>
+
+    <script>
+        const arr =[]
+        const matrix =[]
+        let x = 0
+        let first = []
+        const cdv = document.querySelector('table')
+
+        for(let i = 1;i <= 8; i++){
+            arr.push(i)
+            arr.push(i)
+        }
+        arr.sort(function(a,b) {return Math.random() - .5})
+
+        let kod =''
+        for(let i = 0; i < 4;i++){
+            matrix[i] = []
+            kod += '<tr>'
+            for(let j = 0; j < 4; j++){
+                matrix[i][j] = arr[x++]
+                kod += `<td id="x${i}${j}" onclick="turnOn(${i},${j})" style="background-image : url('png/${matrix[i][j]}.png')"></td>`
+            }
+            kod += '</tr>'
+        }
+        cdv.innerHTML += kod
+
+        
+        setTimeout(turnOff, 3000)
+        
+        function turnOn(i,j){
+            let cardId = "x"+i +j
+            let cari = document.getElementById(cardId)
+            cari.style.backgroundImage= `url(png/${matrix[i][j]})`
+        }
+        function turnOff(){
+            let cell = document.querySelectorAll('td')
+
+            for(let i =0;i< cell.length; i++){
+                cell[i].style.backgroundImage= "url('png/0.png')"
+            }
+        }
+
+        function change(i, j){
+            let id =   `x${i}${j}`
+            let td = document.getElementById("id")
+            td.style.backgroundImage=   `url ('png/${img}.png')`
+        }
+    </script>
+</body>
+</html>

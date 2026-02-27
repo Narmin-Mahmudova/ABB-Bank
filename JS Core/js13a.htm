@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            table { border-collapse: collapse ;margin: 10vh auto;}
+            td {width: 100px; height: 100px; font: bold 2em Arial; 
+                 text-align: center; border: 1px solid #333}
+        </style>
+    </head>
+    <body>
+        <table></table>
+
+        <script>
+            const cdv = document.querySelector('table')
+            const arr = ['']
+            for(let i = 1; i<= 15; i++) arr.push(i)
+            arr.sort(function(a,b) {return Math.random() - .5} )
+            let kod = ''
+            let ind = 0
+            let empty = []
+
+            for(let i = 1; i <= 4; i++){
+                kod += '<tr>'
+                for(let j=1;j <=4;j++){
+                    if(!arr[ind]) empty = [i,j]
+                    kod +=  `<td id="c${i}${j}" onclick="swipe(${i}, ${j})">${arr[ind++]}</td>`
+                }
+                kod += '</tr>'
+            }
+            cdv.innerHTML = kod
+
+            function swipe(i,j){
+                if(i == empty[0] && Math.abs(j - empty[1]) == 1||
+                   j == empty[1] && Math.abs(i - empty[0]) == 1){
+
+                let cId= "c"+ i + j
+                let eId= "c"+ empty[0] + empty[1]
+                let td = document.getElementById(cId)
+                let bos = document.getElementById(eId)
+
+                bos.innerHTML = td.innerHTML
+                td.innerHTML = ''
+
+                empty = [i,j]
+                check()
+                }
+            }
+
+            function check(){
+                for(let i=1;i<=4;i++ ){
+                    for(let j=1;j<=4;j++){
+                        let id = "c"+i+j
+                        let td = document.getElementById(id)
+                        if(td.innerHTML = order) order++
+                    }
+                }
+                if(order >= 15) alert('Tebrikler!')
+            }
+
+            function rand(max) {
+                return Math.floor(Math.random() * max)
+            }
+        </script>
+    </body>
+    </html>

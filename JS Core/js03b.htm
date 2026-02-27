@@ -1,0 +1,72 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Calculator</title>
+        <style>
+            * { box-sizing: border-box;}
+            #calc { display: table; margin: 10vh auto; background-color: #eee;
+                padding: 30px; border-radius: 10px; box-shadow: 0 0 5px #333; }
+            button, input { width: 50px; height: 40px; margin: 5px; 
+                box-shadow: 1px 1px #333; background: #f9f9f9; border-radius: 10px;}
+            button:active { box-shadow: 0 0 3px #333; }
+            input { width: 240px; box-shadow: 1px 1px #333 inset;
+                padding: 0 10px; text-align: right;}
+            #eq { background: orange; width: 110px;}
+        </style>
+    </head>
+    <body>
+        <div id="calc">
+            <div><input type="text" id="display" /></div>
+            <div>
+                <button onclick="clean()">C</button>
+                <button onclick="back()">⇦</button>
+                <button onclick="press('**')">^</button>
+                <button onclick="press('*')">⨯</button>
+            </div>
+            <div>
+                <button onclick="press('7')">7</button>
+                <button onclick="press('8')">8</button>
+                <button onclick="press('9')">9</button>
+                <button onclick="press('/')">÷</button>
+            </div>
+            <div>
+                <button onclick="press('4')">4</button>
+                <button onclick="press('5')">5</button>
+                <button onclick="press('6')">6</button>
+                <button onclick="press('-')">-</button>
+            </div>
+            <div>
+                <button onclick="press('1')">1</button>
+                <button onclick="press('2')">2</button>
+                <button onclick="press('3')">3</button>
+                <button onclick="press('+')">+</button>
+            </div>
+            <div>
+                <button onclick="press('.')">.</button>
+                <button onclick="press('0')">0</button>
+                <button onclick="calc()" id="eq"> = </button>
+            </div>
+        </div>
+
+        <script>
+            const display = document.getElementById('display')
+
+            function back() {
+                display.value = display.value.slice(0, -1)
+            }
+            
+            function clean() {
+                display.value = ''
+            }
+
+            function calc() {
+                display.value = eval(display.value)
+            }
+
+            function press(x) {
+                display.value += x
+            }
+        </script>
+    </body>
+ </html>

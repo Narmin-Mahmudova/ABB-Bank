@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <input type="number" id="text1">
+    <input type="number" id="text2">
+    <button onclick="yoxla()">yoxla</button>
+    <p id="ntc"></p>
+
+    <script>
+        let text1 = document.getElementById('text1')
+        let text2 = document.getElementById('text2')
+        let ntc = document.getElementById('ntc')
+
+        function yoxla() {
+            let a = Number(text1.value)
+            let b = Number(text2.value)
+
+            if ( a > b ){
+                ntc.innerHTML = "Birinci boyukdur"
+            }
+            else if (a < b ){
+                ntc.innerHTML = "Ikinci boyukdur"
+            }
+            else{
+                ntc.innerHTML = "Beraberdir"
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="nbr" type="text">
+    <button onclick="ver()">Ok</button>
+    <p id="ntc"></p>
+
+    <script>
+        function factorial(n) {
+            let ntc = 1;
+            for (let i = 1; i <= n; i++) {
+                ntc *= i;
+            }
+            return ntc;
+        }
+
+        function ver() {
+            const nbr = document.getElementById("nbr").value;
+            const nct = document.getElementById("ntc");
+
+            let sum = 0;
+            for (let i = 0; i < nbr.length; i++) {
+                sum += factorial(Number(nbr[i]));
+            }
+
+            if (sum === Number(nbr)) {
+                ntc.innerHTML = "Strong number";
+            } else {
+                ntc.innerHTML = "Strong number deyil";
+            }
+        }
+    </script>
+
+</body>
+
+</html>

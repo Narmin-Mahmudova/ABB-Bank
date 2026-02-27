@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="nbr" type="text">
+    <button onclick="ver()">Ok</button>
+    <p id="ntc"></p>
+
+    <script>
+        function ver() {
+            const nbr = +document.getElementById("nbr").value;
+            const nct = document.getElementById("ntc");
+
+            let rslt = 1;
+            for (let i = 1; i <= nbr; i++) {
+                rslt *= i;
+            }
+            ntc.innerHTML ="Faktorial:" + rslt
+        }
+    </script>
+</body>
+</html>

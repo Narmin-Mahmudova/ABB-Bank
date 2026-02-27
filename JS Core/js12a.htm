@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            table { border-collapse: collapse }
+            td {width: 50px; height: 50px; text-align: center; border: 1px solid #333 }
+        </style>
+    </head>
+    <body>
+        <h1>10</h1>
+        <table id="cdv"></table>
+
+        <script>
+            const h1 = document.querySelector('h1')
+            const cdv = document.getElementById('cdv')
+            const arr = []
+            let novbe = 1
+            let t = 10
+            for (let i = 1; i <= 16; i++) {
+                arr.push(i)
+            }
+
+            let timer = setInterval(time, 1000)
+
+            let kod = ''
+            for (let i = 1; i <= 4; i++) {
+                kod += '<tr>'
+                for (let j = 1; j <= 4; j++) {
+                    let ind = rnd(0, arr.length - 1)
+                    kod += `<td onclick="boz(this)">${arr[ind]}</td>`
+                    arr.splice(ind, 1)
+                }
+                kod += '</tr>'
+            }
+            cdv.innerHTML = kod
+
+            function time () {
+                h1.innerHTML = t--
+                if (t < 0) oyunSonu(0)
+            }
+
+            function boz(td) {
+                if (td.innerHTML == novbe) {
+                    td.style.background = "#ccc"
+                    td.style.color = "#aaa"
+                    novbe++
+                    if (novbe > 16) oyunSonu(1)
+                }
+            }
+
+            function oyunSonu(n) {
+                if(n == 0) {
+                    h1.innerHTML = 'UDUZDUN !!!'
+                    novbe = 0
+                }
+                if(n == 1) {
+                    h1.innerHTML = 'TƏBRİKLƏR !!!'
+                    clearInterval(timer)
+                }
+            }
+
+            function rnd(min, max) {
+                return Math.floor(Math.random() * (max - min + 1) ) + min
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" placeholder="Ad" id="ad">
+    <input type="radio" name="sex" id="k" checked="checked">Kisi
+    <input type="radio" name="sex" id="q">Qadin
+    <input type="number" min="1970" max="2020" placeholder="Tevellud" id="il">
+    <button onclick="salamVer()">Ok</button>
+    <h1 id="msj"></h1>
+
+    <script>
+        const ad = document.getElementById('ad');
+        const k = document.getElementById('k');
+        const q = document.getElementById('q');
+        const il = document.getElementById('il');
+        const msj = document.getElementById('msj');
+
+        function salamVer(){
+            let d = new Date();
+            let saat = d.getHours();
+            let yas = d.getFullYear() - il.value;
+            let salam = yas < 20 ? 'Salam':
+                        saat < 6 ? 'Geceniz xeyir':
+                        saat < 12 ? 'Sabahiniz xeyir':
+                        saat < 18 ? 'Her vaxtiniz xeyir':
+                                    'Axshaminiz xeyir';
+            let xitab = yas < 20 ? '':
+                        k.checked ? 'bey' : 'xanim';
+
+            msj.innerHTML = `${salam}, ${ad.value} ${xitab} `
+        }
+    </script>
+</body>
+</html>

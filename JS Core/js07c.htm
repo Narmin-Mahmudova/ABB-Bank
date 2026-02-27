@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="number" id="len" min="1" max="10" />
+    <button onclick="rand()">Generate</button>
+    <h1 id="n"></h1>
+
+    <script>
+        const len = document.getElementById('len');
+        const n = document.getElementById('n');
+        function rand() {
+            let min = 1 + '0'.repeat(len.value - 1);
+            let max = 1 + '0'.repeat(len.value);
+            
+            n.innerHTML = Math.floor(Math.random() * (max - min) + +min);
+        }
+    </script>
+</body>
+</html>

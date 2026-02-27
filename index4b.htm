@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="pass" placeholder="Kodu daxil edin">
+    <button onclick="goster()">Daxil et</button>
+    <p id="ntc"></p>
+
+    <script>
+        let pass = document.getElementById('pass')
+        let ntc = document.getElementById('ntc')
+
+        function goster(){
+            ntc.innerHTML=(pass.value.length > 6) ? 'Sifre uzundur' : 'Daxil oldunuz';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+#span1, #span2, #span3, #span4 {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+.active {
+    background-color: white;
+    color: black;
+}
+
+
+#circle1, #circle2, #circle3, #circle4, #circle5, #circle6 {
+    border-radius: 50%;
+    background-color: #0A0B0D0A;
+    padding: 10px; 
+    cursor: pointer;
+}
+.active-circle {
+    border: 2px solid #333;
+    background-color: white; 
+}
+
+
+#spn1, #spn2, #spn3 {
+    display: inline-block;
+    padding: 8px 12px;
+    border-radius: 10px;
+}
+.active {
+    background-color: white;
+    color: black;
+}
+
+
+#crcl1, #crcl2, #crcl3, #crcl4, #crcl5, #crcl6 {
+    border-radius: 50%;
+    background-color: #0A0B0D0A;
+    padding: 10px; 
+    cursor: pointer;
+}
+.active-crcl {
+    border: 2px solid #333;
+    background-color: white; 
+}
+
+
+#btn1, #btn2, #btn3, #btn4 {
+    border-radius: 10px;
+    background-color: white;
+    color: #7a7d82;
+    padding: 12px; 
+    border: 0; 
+    font-size: 16px; 
+    cursor: pointer;
+}
+.active-btn {
+    background-color: black !important;
+    color: white !important; 
+}

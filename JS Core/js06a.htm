@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{text-align: center;}
+    </style>
+</head>
+<body>
+    <h1 id="msj">0-dan 100-e kimi bir say tutdum. Onu tap!</h1>
+    <input type="number" id="n" min="0" max="100">
+    <button onclick="ver()">Ok</button>
+
+    <script>
+        const x = Math.round(Math.random() * 100);
+        const btn = document.querySelector('button');
+        const msj = document.getElementById('msj');
+        let cehd = 0;
+
+        function ver(){
+            const n = document.getElementById('n');
+            cehd++;
+            msj.innerHTML = (n.value == x) ? `Tebrikler, ${cehd} cehdden  tapdiniz!`:
+                            (n.value > x) ?  `Cehd ${cehd}, Artiqdir, Bir daha sina`:
+                                             `Cehd ${cehd}, Eksikdir, Bir daha sina`;
+        }
+    </script>
+</body>
+</html>

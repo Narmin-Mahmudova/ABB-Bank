@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        const ul = document.querySelector('ul')
+        // let obj = new Object()
+        let obj = {
+            name: 'Nurlan',
+            year: 2007,
+            age(){
+                return new Date().getFullYear - obj.year
+            }
+        }
+
+        // obj.sname = "Qurbanov"
+        // obj.age = 24
+        // delete obj.sname
+
+        for (const key in obj) {
+            let val = typeof(obj[key]) == 'function' ? obj[key]() : obj[key]
+            ul.innerHTML += `<li> ${key} - ${val}</li>`            
+            
+        }
+    </script>
+</body>
+</html>

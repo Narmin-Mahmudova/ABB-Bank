@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            input { width: 40px; text-align: right; }
+        </style>
+    </head>
+    <body>
+        <input type="text" id="a" value="14"> / 
+        <input type="text" id="b" value="4">
+        <button onclick="bol()"> = </button>
+        <span id="c"></span>
+        <script>
+            let a = document.getElementById('a')
+            let b = document.getElementById('b')
+            let c = document.getElementById('c')
+
+            function bol() {
+                let qismet = Math.trunc(a.value / b.value)
+                let qaliq = a.value % b.value
+                // let qismet = (a.value - qaliq) / b.value
+
+                c.innerHTML = `${qismet}, qalıq ${qaliq}`
+            }
+        </script>
+    </body>
+</html>

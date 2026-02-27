@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Document</title>
+        <style>
+            #inps input {display: table; margin: 10px 0; width: 50px; text-align: right;}
+        </style>
+    </head>
+    <body>
+        <button id="del">-</button>
+        <button id="add">+</button>
+        <div id="inps"></div>
+        <button id="sumBtn">Sum</button>
+        <button id="avgBtn">Avg</button>
+        <h1></h1>
+
+        <script>
+            const del = document.getElementById('del')
+            const add = document.getElementById('add')
+            const sumBtn = document.getElementById('sumBtn')
+            const avgBtn = document.getElementById('avgBtn')
+            const inps = document.getElementById('inps')
+            const h1 = document.querySelector('h1')
+            let n = 2
+
+            show()
+
+            del.onclick = function() {
+                if(n > 2) n--
+                show(n)
+            }
+            add.onclick = function() {
+                if(n < 10) n++
+                show(n)
+            }
+            sumBtn.onclick = function() {
+                h1.innerHTML = calcSum()
+            }
+            avgBtn.onclick = function() {
+                h1.innerHTML = calcSum() / n
+            }
+
+            function calcSum() {
+                let list = inps.querySelectorAll('input')
+                let s = 0
+                for (let i = 0; i < list.length; i++) {
+                    s += +list[i].value
+                }
+                return s
+            }
+
+            function show() {
+                let kod = ''
+                for (let i = 0; i < n; i++) {
+                    kod += `<input type="text">`
+                }
+                inps.innerHTML = kod
+            }
+        </script>
+    </body>
+</html>

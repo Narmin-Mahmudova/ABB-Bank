@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table { border-collapse: collapse}
+        td {width: 40px; height: 40px; text-align: center; border: 0px solid #333 }
+        .orange {background-color: orange;}
+        .yellow {background-color: yellow;}
+    </style>
+</head>
+<body>
+    <select id="sutun"></select>
+    <select id="setir"></select>
+    <button onclick="knight()">Ok</button>
+    <table></table>
+
+    <script>
+        const cdv = document.querySelector('table');
+        const setir = document.querySelector('setir');
+        const sutun = document.querySelector('sutun');
+        const letters = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H'];
+
+        let html = '';
+
+        html += '<tr><td></td>'; 
+        for (let i = 0; i < 8; i++) {
+            html += `<td>${letters[i]}</td>`;
+        }
+        html += '</tr>';
+
+        for (let i = 0; i < 8; i++) {
+            html += '<tr>';
+            html += `<td>${i + 1}</td>`;
+            for (let j = 0; j < 8; j++) {
+                let color = ((i + j) % 2) ? "yellow" : "orange";
+                html += `<td class="${color}"></td>`;
+            }
+            html += '</tr>';
+        }
+
+        cdv.innerHTML = html;
+    </script>
+
+    </body>
+
+</html>

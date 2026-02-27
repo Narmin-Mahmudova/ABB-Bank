@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="color" type="text">
+    <button onclick="add()">Ok</button>
+    <ul id="list"></ul>
+
+    <script>
+        const color = document.getElementById('color');
+        const list = document.getElementById('list');
+
+        function add() {
+            let c = color.value
+            if(c == 'white') c= 'black';
+           list.innerHTML += `<li style="color:${c}">${c}</li>`;
+           color.value = '';
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {margin: 0;height: 100vh;position: relative;}
+        #screen {width: 100%;height: 100%;position: relative;overflow: hidden;background: url('img/winter.jpg') center/cover;}
+        #screen>* {position: absolute;color: #fff}
+    </style>
+</head>
+<body>
+    <div id="screen"></div>
+
+    <script>
+        const screen = document.getElementById('screen')
+        let width = screen.offsetWidth
+        let height = screen.offsetHeight
+        const flakeArr = ['❄', '❅', '❆', '*']
+        const snowArr = []
+
+        setInterval(create, 1000)
+        setInterval(fall, 40)
+
+        function create() {
+            let id = `flake${snowArr.length}`
+            let shape = flakeArr[rnd(0, flakeArr.length - 1)]
+            let size = rnd(10, 20) / 10
+            let x = rnd(0, width)
+            let y = -16 * size 
+            let color = rnd(5, 10) / 10
+            let speed = rnd(20, 40) / 10
+            snowArr.push([id, x, y, size, color, speed])
+            screen.innerHTML += `<div id="${id}">${shape}</div>`
+        }
+
+        function fall(){
+            for (let i = 0; i < snowArr.length; i++) {
+                const param = snowArr[i]
+                let id = param[0]
+                let x = param [1]
+                let y =  param[2]
+                let size = param[3]
+                let speed = param[5]
+
+                param[2] += speed
+                param[1] += Math.sin(.01 * y)
+                show(i)
+            }
+        }
+
+        function show(i){
+            const param = snowArr[i]
+            let id = param[0]
+            let x = param [1]
+            let y =  param[2]
+            let size = param[3]
+            let color = param[4]
+
+            const elem = document.getElementById(param[0])
+            elem.style.left = x + 'px'
+            elem.style.top = y + 'px'
+            elem.style.fontsize = size + 'em'
+            elem.style.opacity = color
+        }
+
+        function rnd(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min)
+        }
+    </script>
+</body>
+</html>

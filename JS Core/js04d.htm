@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name"  type="text" placeholder="Adiniz nedir?" />
+    <input id="m" name="sex" checked="checked" type="radio"/>Kisi
+    <input id="f" name="sex" type="radio"/>Qadin
+    <button onclick="Salamver()">Ok</button>
+    <h1 id="msg"></h1>
+
+    <script>
+        const name = document.getElementById('name');
+        const m = document.getElementById('m');
+        const f = document.getElementById('f');
+        const msg = document.getElementById('msg');
+
+        function Salamver(){
+            let ad = name.value;
+            let xitab = m.checked ? 'bey' : 'xanim';
+
+            msg.innerHTML = `Salam ${ad} ${xitab}`
+        }
+    </script>
+</body>
+</html>

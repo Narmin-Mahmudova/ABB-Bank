@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="n"></select>
+    <button id="Button">Ok</button>
+    <h1></h1>
+    <script>
+        const n = document.getElementById("n")
+        const btn = document.querySelector("button")
+        const h1 = document.querySelectorAll("h1")
+        const num = ["Sifir", "Bir", "Iki", "Uc", "Dord", "Bes", "Alti", "Yeddi", "Sekkiz", "Doqquz"]
+        for (let i = 0; i <= 9; i++) n.innerHTML += `<option>${i}</option>` 
+
+        btn.onclick = change
+        function change(){
+            h1.innerHTML = num[n.value]
+
+        // switch(+n.value){
+        //     case 0:
+        //         h1.innerHTML = "Sifir"
+        //         break
+        //     case 1:
+        //         h1.innerHTML = "Bir"
+        //         break
+        //     case 2:
+        //         h1.innerHTML = "Iki"
+        //         break
+        //     case 3:
+        //         h1.innerHTML = "Uc"
+        //         break
+        //     case 4:
+        //         h1.innerHTML = "Dord"
+        //         break
+        //     case 5:
+        //         h1.innerHTML = "Bes"
+        //         break
+        //     case 6:
+        //         h1.innerHTML = "Alti"
+        //         break
+        //     case 7:
+        //         h1.innerHTML = "Yeddi"
+        //         break
+        //     case 8:
+        //         h1.innerHTML = "Sekkiz"
+        //         break
+        //     case 9:
+        //         h1.innerHTML = "Doqquz"
+        //         break
+        // }
+    }
+    </script>
+</body>
+</html>

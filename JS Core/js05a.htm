@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="name" type="text" placeholder="Adinizi nedir"/>
+    <input id="m"  checked="checked" type="radio">Kisi
+    <input id="f" type="radio">Qadin
+    <button onclick="ver()">Ok</button>
+    <h1 id="msg"></h1>
+
+    <script>
+        const name = document.getElementById('name');
+        const m = document.getElementById('m');
+        const f = document.getElementById('f');
+        const msg = document.getElementById('msg');
+        
+        function ver(){
+            let d = Date();
+            let salam = (d.getHours() < 6) ? 'Geceniz xeyre' : 
+                        (d.getHours() < 12) ? 'Sabahiniz xeyir' : 
+                        (d.getHours() < 18) ? 'Her vaxtiniz xeyir' : 'Axsaminiz xeyir';
+
+            msg.innerHTML = `${salam},
+                ${name.value} 
+                ${m.checked ? 'bey' :'xanim'}`;
+        }
+    </script>
+</body>
+</html>
