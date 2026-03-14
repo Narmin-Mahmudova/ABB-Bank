@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let polindrom = ['Bizə tut əzib','Baki gozel seher','Ey mələk kələm ye'];
+
+        function isPolindrom(soz){
+            let arr = [];
+            for (let i = 0; i < soz.length; i++) {
+                soz[i] = soz[soz.length - 1 - i];
+            }
+            console.log(arr.join(''));
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let cumle = "Bir bərbər bir bərbərə gəl bərabər bir bərbər dükanı açaq demiş";
+        let str = 'bər';
+        let say = 0;
+
+        for(let i = 1; i < cumle.length; i++){
+            if(cumle.indexOf(str, i) === i){
+                say++;
+            }
+        }
+        console.log(say);
+    </script>
+</body>
+</html>

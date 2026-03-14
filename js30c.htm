@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const nums = [5, 8, -2, 4, 2, 3, 5, 7, 9, 85, 3, 2, 4, 6, 8, 10]  
+        
+        console.log(unic(nums));
+
+        function unic(arr){
+            let uarr = []
+            arr.forEach(n => { if( !arr.includes(n)) uarr.push(n) });
+            return uarr
+        }
+    </script>
+</body>
+</html>

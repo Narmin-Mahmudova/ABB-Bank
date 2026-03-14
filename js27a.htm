@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Telebe(name, year){
+            this.name = name
+            this.year = year
+            this.age = function(){
+                return new Date().getFullYear() - this.year
+            }
+            this.sayH1 = function(){
+                console.log(`Salam, men ${this.name}`)
+            }
+        }
+        const tlb1 = new Telebe('Eli', 2007)
+        const tlb2 = new Telebe('Huseyn', 2006)
+        const tlb3 = new Telebe('Xedice', 2005)
+        </script>
+</body>
+</html>

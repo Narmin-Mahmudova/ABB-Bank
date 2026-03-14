@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const email = 'rafaelqorcuyev@gmail.com';
+        // 'r*************v@gm******m'
+        let l = email.length;
+        let i = email.indexOf('@');
+        console.log(
+            email[0] + '*'.repeat(i - 2) + email[i - 1] + '@' + email[i + 1] + '*'.repeat(l - i - 2) + email.at(-1)
+        )
+
+    </script>
+</body>
+</html>

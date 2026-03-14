@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        const list = document.getElementById('ul')
+
+        let tlb1 = {name: "Sebire"}
+        let tlb2 = {name: "Xeyale"}
+        let tlb3 = {name: "Ali"}
+
+        let turniket = new Map()
+
+        turniket.set(tlb1, '10:16')
+        turniket.set(tlb2, '10:05')
+        turniket.set(tlb3, '11:00')
+
+        for (const key of turniket) {            
+            list.innerHTML += `<li>${(key[0].name)}, ${key[1]}</li>`
+        }
+
+        // let turniket = {}
+        // turniket[tlb1] = "10:16"
+        // turniket[tlb2] = "10:03"
+    </script>
+</body>
+</html>

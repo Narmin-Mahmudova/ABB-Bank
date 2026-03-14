@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        const list = document.querySelector('ul')
+        const arr = [
+            {name:'Xeyale', sex: 'f', age: 19, height: 155}, 
+            {name:'Sabir', sex: 'm', age: 19, height: 181}, 
+            {name:'Gunay', sex: 'f', age: 21, height: 170}, 
+            {name:'Elmar', sex: 'm', age: 18, height: 170}, 
+            {name:'Sebire', sex: 'f', age: 19, height: 170}, 
+            {name:'Nurlan', sex: 'm', age: 18, height: 184}
+        ]
+
+        list.innerHTML = arr.filter (elm => elm.sex === 'm')
+                        .reduce((cem, elm) => cem + elm.height / arr.length, 0 )
+
+        // console.log(arr.filter (elm => elm.sex === 'm' && elm.age > '18' && elm.height === 180)) 
+        //             .reduce((kod, elm) => kod + `<li>${elm.name}</li>`,'')
+    </script>
+</body>
+</html>
