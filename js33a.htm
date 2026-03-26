@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        arr= [2, 34, 43, 3, -7 , -87]
+        const sum = (...arg) => arg.reduce((s, a) => s + a, 0)
+
+        
+        // function sum(){
+        //     let s = 0
+        //     for (const a of arguments) {
+        //         s +=a
+        //     }    
+        //     return s        
+        // }
+
+            console.log(Math.min(...arr));
+            console.log(Math.max(...arr));
+            console.log(sum(...arr));
+
+            const arr1 = [2,56,4]
+            const arr2 = [32,56,4,87]
+
+            console.log([arr1,4,5,arr2,85]);
+        </script>
+</body>
+</html>
