@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            #game { position: relative; width: 800px; height: 600px; box-shadow: 0 0 10px #333; }
+        </style>
+    </head>
+    <body>
+        <div id="game"></div>
+
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.14.2/jquery-ui.js"></script>
+        <script>
+            $(()=>{
+                const game = $('#game')
+                const w = $(window).width()
+                const h = $(window).height()               
+
+                for (let i = 0; i < 6; i++) {
+                    for (let j = 0; j < 8; j++) {
+                        game.append(`<div id="p${i}${j}"></div>`)
+                        $(`#p${i}${j}`).css({
+                            position: 'absolute',
+                            top: rnd(8, h - 130) + 'px',
+                            left: rnd(800, w - 130) + 'px',
+                            transform: `rotate(${rnd(-30, 30)}deg)`,
+                            width: '100px',
+                            height: '100px',
+                            boxShadow: '0 0 5px #333',
+                            background: `url('img/puzzle1.jpg') ${-100 * j}px ${-100 * i}px`
+                        })
+                    }
+                }
+
+                game.find('div').draggable({
+                    snap: true,
+                    cursor: "pointer", 
+                    cursorAt: { top: 50, left: 50 },
+                    start: function() {
+                        $(this).css({transform: `rotate(0)`})
+                    },
+                    stop: function() {
+                        $(this).css({
+                            top: Math.round($(this).position().top / 100) * 100 + 'px',
+                            left: Math.round($(this).position().left / 100) * 100 + 'px' 
+                        })
+                    }
+                })
+                
+                function rnd(min, max) {
+                    return Math.floor(Math.random() * (max - min + 1)) + min
+                }
+            })
+        </script>
+    </body>
+</html>

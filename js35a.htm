@@ -6,13 +6,12 @@
 </head>
 <body>
     <script>
-        function sum(a){
-            return function(b){
-                return a + b
-            }
-        }
+        let obj ={name: 'Ali'};
 
-        sum(1)(2) ///3
+        function SayHi(){
+            return `${hi}, ${this.name}`;
+        }
+         const SalamVer = SayHi.bind(obj);
     </script>
 </body>
 </html>

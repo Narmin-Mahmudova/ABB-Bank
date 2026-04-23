@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+        <style>
+            .sari { background-color: yellow }
+            .narinci { background-color: orange }
+        </style>
+    </head>
+    <body>
+        <ul>
+            <li>Ali</li>
+            <li>Huseyin</li>
+            <li>Nermin</li>
+            <li>Samire</li>
+        </ul>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/4.0.0-rc.1/jquery.min.js" integrity="sha512-MXe5EK5gyK+fbhwQy/dukwz9fw71HZcsM4KsyDBDTvMyjymkiO0M5qqU0lF4vqLI4VnKf1+DIKf1GM6RFkO8PA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script>
+            $('li')
+                .mouseenter(function() {
+                    $(this).addClass('sari')
+                })
+                .mouseleave(function() {
+                    $(this).removeClass('sari')
+                })
+                .click(function () {
+                    $(this).toggleClass('narinci')
+                })
+        </script>
+    </body>
+</html>

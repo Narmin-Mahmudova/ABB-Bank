@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            ul { list-style: none; padding: 0 }
+            li { width: 250px; padding: 5px 0; border-bottom: 1px solid #333; overflow: auto }
+            li b { float: right }
+            .del { cursor: pointer }
+        </style>
+    </head>
+    <body>
+        <input id="name" type="text" placeholder="Ad" maxlength="20" />
+        <input id="salary" type="number" placeholder="Maaş" min="500" max="10000" />
+        <button id="add">+</button>
+        <div>
+            <button id="clear">Clear</button>
+        </div>
+        <ul></ul>
+
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script>
+            // $(document).ready(() => {  })
+            $(() => {
+                const ul = $('ul')
+                $('#add').click(() => { 
+                    ul.append(`<li>${$('#name').val()} <b>${$('#salary').val()}₼ 
+                        <a class="del">❎</a>
+                    </b> </li>`)
+                    $('#name').val('')
+                    $('#salary').val('')
+                    $('.del').click( function() {
+                        $(this).parents('li').remove()
+                        if ( ul.find('li').length == 0) {
+                            ul.prev().remove()
+                            ul.next().remove()
+                        }
+                    } )
+                    console.log ( ul.find('li').length ) 
+
+                    if ( $('h1').length !== 1 ) {
+                        ul.before('<h1>Maaş cədvəli</h1>')
+                        ul.after('<i>* bizim tənbəllər</i>')
+                    }
+                    
+                })
+
+                $('#clear').click( () => {
+                    ul.empty()
+                    ul.prev().remove()
+                    ul.next().remove()
+                })
+                
+            })
+        </script>
+    </body>
+</html>

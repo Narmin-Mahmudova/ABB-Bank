@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Document</title>
+    </head>
+    <body>
+        <input type="text" placeholder="Adin nedir ?" />
+        <button>Ok</button>
+        <h1></h1>
+        
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+        <script>
+            // document.querySelector('h1').innerHTML = '<u>Salam, jQuery!</u>'
+            // document.querySelector('h1').style.color = "red"
+            // document.querySelector('h1').style.fontFamily = "Arial"
+
+            $('button').click( function() {
+                let name = $('input').val()
+                $('h1')
+                    .html(`<u>Salam, ${name} !</u>`)
+                    .css({
+                        color: 'red',
+                        fontFamily: 'Arial'
+                    })
+            } )
+
+
+            // jQuery(selector).method(value)
+            // jQuery(selector).event( function() { ... } )
+        </script>
+    </body>
+</html>
